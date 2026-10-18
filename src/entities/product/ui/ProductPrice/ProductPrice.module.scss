@@ -1,0 +1,41 @@
+.root {
+  color: var(--text-primary);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.25rem 0.75rem;
+
+  &.small {
+    font-size: 1.125rem;
+  }
+
+  &.medium {
+    font-size: 1.5rem;
+  }
+
+  &.large {
+    font-size: 2.5rem;
+  }
+}
+
+.current {
+  font-family: var(--font-family-third), sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.old {
+  font-size: 0.5em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.badge {
+  padding: 0.375rem 0.625rem;
+  font-size: 0.5em;
+  font-weight: 600;
+  white-space: nowrap;
+  background-color: var(--feedback-success-bg);
+  color: var(--feedback-success-fg);
+  border-radius: var(--border-radius-s);
+}

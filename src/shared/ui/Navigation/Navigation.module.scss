@@ -1,0 +1,66 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.list {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  &.row {
+    flex-direction: row;
+  }
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.column-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+.link {
+  --color: var(--black);
+  &.base {
+    --color: var(--text-inverse);
+  }
+  &.secondary {
+    --color: var(--text-muted);
+  }
+
+  position: relative;
+  padding-bottom: 0.25rem;
+  font-weight: 400;
+  color: var(--color);
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    transform: translateX(-50%);
+    background-color: var(--color);
+    transition: width var(--transition-duration) var(--transition-function);
+  }
+
+  @include hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  @include focus {
+    outline: 1px solid var(--accent-default);
+    outline-offset: 1px;
+  }
+}

@@ -1,0 +1,80 @@
+.root {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: calc(100% - 2rem);
+  max-height: calc(100dvh - 2rem);
+  color: var(--text-primary);
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-transparent);
+  border-radius: var(--border-radius-l);
+
+  &.small {
+    max-width: 24rem;
+  }
+
+  &.medium {
+    max-width: 32rem;
+  }
+
+  .large {
+    max-width: 48rem;
+  }
+
+  &::backdrop {
+    background-color: rgb(0 0 0 / 50%);
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: calc(100dvh - 2rem);
+  padding: 1.5rem;
+}
+
+.header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.close {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  color: var(--text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+
+  @include hover {
+    color: var(--accent-default);
+  }
+
+  @include focus {
+    outline: 2px solid var(--accent-default);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    color: var(--text-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.body {
+  overflow-y: auto;
+}
+
+.footer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}

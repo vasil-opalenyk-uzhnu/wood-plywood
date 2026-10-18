@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: fluid(20, 10);
+  background-color: var(--surface-page);
+  border: 1px solid var(--border-transparent);
+  border-radius: var(--border-radius-l);
+}
+
+.label {
+  color: var(--primary-default);
+}

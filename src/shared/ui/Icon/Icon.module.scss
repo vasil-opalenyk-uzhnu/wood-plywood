@@ -1,0 +1,33 @@
+@keyframes shake {
+  50% {
+    translate: 1.25rem;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    scale: 1.5;
+  }
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+.shake {
+  animation: shake 1s infinite linear;
+}
+
+.pulse {
+  animation: pulse 1s infinite linear;
+}
+
+.spin {
+  animation: spin 1s infinite linear;
+}

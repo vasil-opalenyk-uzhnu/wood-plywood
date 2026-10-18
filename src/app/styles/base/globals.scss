@@ -1,0 +1,165 @@
+html {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  background-color: var(--surface-page);
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: column;
+  min-height: 100vh;
+
+  main {
+    flex: 1 1 auto;
+  }
+}
+
+.container-big,
+.container,
+.container-small {
+  max-width: 73.875rem;
+  margin: 0 auto;
+  padding-inline: 0.9375rem;
+}
+
+.container-big {
+  max-width: 1440px;
+}
+
+.container-small {
+  max-width: 940px;
+}
+
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+  color: var(--text-primary);
+  font-family: var(--font-family-third), sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.h1,
+h1 {
+  font-family: var(--font-family-second), sans-serif;
+  color: var(--text-inverse);
+  font-weight: 400;
+
+  @include fluid-text(120, 48);
+}
+
+.h2,
+h2 {
+  font-size: 2.5rem;
+}
+
+.h3,
+h3 {
+  font-size: 1.125rem;
+}
+
+p,
+.p {
+  color: var(--text-disabled);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  font-weight: 500;
+
+  &--primary {
+    color: var(--primary-default);
+  }
+
+  &--secondary {
+    color: var(--secondary-default);
+    text-transform: uppercase;
+  }
+
+  &--text {
+    font-family: var(--font-family-third), sans-serif;
+    font-style: italic;
+    line-height: 1.6;
+    font-weight: 400;
+
+    @include fluid-text(20, 14);
+  }
+}
+
+a {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+strong {
+  color: var(--primary-color);
+}
+
+.visible-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    to right in oklab,
+    transparent 0%,
+    var(--primary-default) 25%,
+    var(--secondary-default) 50%,
+    var(--primary-default) 75%,
+    transparent 100%
+  );
+
+  &--left {
+    background: linear-gradient(
+      to right in oklab,
+      var(--secondary-default) 0%,
+      var(--primary-default) 44%,
+      transparent 94%
+    );
+  }
+
+  &--right {
+    background: linear-gradient(
+      to left in oklab,
+      var(--secondary-default) 0%,
+      var(--primary-default) 44%,
+      transparent 94%
+    );
+  }
+}
+
+.block {
+  padding: fluid(24, 16);
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-transparent);
+  border-radius: var(--border-radius-l);
+}
+
+.error-text {
+  color: var(--error-color);
+}

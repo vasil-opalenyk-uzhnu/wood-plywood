@@ -1,0 +1,52 @@
+:root[data-theme='dark'] {
+  /* Primary */
+  --primary-default: var(--honey-300);
+  --primary-hover: var(--honey-400);
+  --primary-active: var(--honey-500);
+  --primary-on: var(--charcoal-950);
+
+  /* Secondary */
+  --secondary-default: var(--walnut-500);
+  --secondary-on: var(--cream-50);
+
+  /* Accent */
+  --accent-default: var(--sage-400);
+  --accent-on: var(--white);
+
+  /* Surface */
+  --surface-page: var(--charcoal-950);
+  --surface-base: var(--charcoal-900);
+  --surface-elevated: var(--charcoal-850);
+  --surface-sunken: var(--black);
+
+  /* Text */
+  --text-primary: var(--cream-50);
+  --text-muted: var(--cream-400);
+  --text-disabled: var(--stone-400);
+  --text-inverse: var(--cream-50);
+
+  /* Border */
+  --border-default: var(--charcoal-700);
+  --border-transparent: color-mix(in srgb, var(--cream-50), transparent 12%);
+  --border-strong: var(--stone-600);
+  --border-focus: var(--honey-400);
+
+  /* Overlay */
+  --overlay-scrim: color-mix(in srgb, var(--black), transparent 72%);
+
+  /* Feedback success */
+  --feedback-success-fg: var(--sage-300);
+  --feedback-success-bg: var(--sage-800);
+
+  /* Feedback warning */
+  --feedback-warning-fg: var(--amber-400);
+  --feedback-warning-bg: var(--amber-900);
+
+  /* Feedback error */
+  --feedback-error-fg: var(--brick-400);
+  --feedback-error-bg: var(--brick-900);
+
+  /* Feedback info */
+  --feedback-info-fg: var(--slate-400);
+  --feedback-info-bg: var(--slate-900);
+}

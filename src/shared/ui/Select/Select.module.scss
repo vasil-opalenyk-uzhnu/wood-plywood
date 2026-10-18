@@ -1,0 +1,37 @@
+.root {
+  position: relative;
+  display: inline-block;
+  color: var(--text-muted);
+}
+
+.select {
+  appearance: none;
+  padding: 0.625rem 2.625rem 0.625rem 0.625rem;
+  cursor: pointer;
+  background-color: var(--surface-page);
+  border: 1px solid var(--border-transparent);
+  border-radius: var(--border-radius);
+  transition: boder-color var(--transition-duration) var(--transition-function);
+
+  @include hover {
+    border-color: var(--primary-default);
+  }
+
+  @include focus {
+    outline: 2px solid var(--accent-default);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 0.625rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}

@@ -1,0 +1,99 @@
+$laptop: 1440px;
+$tablet: 1023px;
+$mobile: 767px;
+$mobile-s: 425px;
+
+@mixin laptop-above {
+  @media (width > $laptop) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (width <= $laptop) {
+    @content;
+  }
+}
+
+@mixin tablet-above {
+  @media (width > $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (width <= $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile-above {
+  @media (width > $mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (width <= $mobile) {
+    @content;
+  }
+}
+
+@mixin mobile-s-above {
+  @media (width > $mobile-s) {
+    @content;
+  }
+}
+
+@mixin mobile-s {
+  @media (width <= $mobile-s) {
+    @content;
+  }
+}
+
+@mixin hover($hasActiveEffectOnMobile: true) {
+  &:not(:disabled, .disabled) {
+    @media (any-hover: hover) {
+      &:hover {
+        @content;
+      }
+    }
+
+    @if $hasActiveEffectOnMobile {
+      @media (any-hover: none) {
+        &:active {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+@mixin active($withTouchReset: true) {
+  @if $withTouchReset {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  &:not(:disabled, .disabled, [aria-disabled='true']) {
+    &:active {
+      @content;
+    }
+  }
+}
+
+@mixin focus {
+  &:not(:disabled, .disabled):focus {
+    &:focus-visible {
+      @content;
+    }
+  }
+}
+
+@mixin focus-within {
+  &:not(:disabled, .disabled):focus-within {
+    &:focus-within {
+      @content;
+    }
+  }
+}

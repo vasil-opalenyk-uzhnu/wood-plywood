@@ -1,0 +1,58 @@
+.root {
+  padding-block: fluid(128, 64);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.283;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include tablet {
+    @include visually-hidden;
+  }
+}
+
+.deco {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-transparent);
+  }
+
+  p {
+    white-space: nowrap;
+  }
+}
+
+.main {
+  flex-direction: column;
+  padding-inline: fluid-to-laptop(80, 20);
+  gap: 0.75rem;
+
+  @include flex-center;
+}

@@ -1,7 +1,8 @@
+import 'virtual:svg-icons-register';
+import './app/styles';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './app/index.scss';
-import App from './app/App.jsx';
+import App from '@/app/App.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

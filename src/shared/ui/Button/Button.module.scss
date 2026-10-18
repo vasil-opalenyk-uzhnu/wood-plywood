@@ -1,0 +1,103 @@
+.root {
+  display: inline-flex;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 500;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition-duration) var(--transition-function);
+
+  @include flex-center(true);
+}
+
+.variant {
+  &-primary {
+    background-color: var(--primary-default);
+    color: var(--primary-on);
+
+    @include hover {
+      background-color: var(--primary-hover);
+    }
+
+    @include active {
+      background-color: var(--primary-active);
+    }
+
+    @include focus {
+      outline: 2px solid var(--accent-default);
+      outline-offset: 2px;
+    }
+  }
+
+  &-secondary {
+    background-color: transparent;
+    border-color: var(--primary-hover);
+    color: var(--text-primary);
+
+    @include hover {
+      background-color: var(--surface-elevated);
+      border-color: var(--border-strong);
+    }
+
+    @include active {
+      background-color: var(--border-strong);
+    }
+
+    @include focus {
+      outline: 2px solid var(--accent-default);
+      outline-offset: 2px;
+    }
+  }
+
+  &-error {
+    background-color: var(--feedback-error-bg);
+    border-color: var(--feedback-error-fg);
+    color: var(--feedback-error-fg);
+
+    @include hover {
+      background-color: color-mix(in srgb, var(--feedback-error-fg), transparent 20%);
+      color: var(--feedback-error-bg);
+    }
+
+    @include active {
+      background-color: var(--feedback-error-fg);
+      color: var(--feedback-error-bg);
+    }
+
+    @include focus {
+      outline: 2px solid var(--accent-default);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.size {
+  &-small {
+    padding-block: 0.5rem;
+    padding-inline: 0.875rem;
+    border-radius: var(--border-radius-s);
+  }
+
+  &-medium {
+    padding-block: 0.875rem;
+    padding-inline: 2rem;
+    border-radius: var(--border-radius-xxl);
+  }
+}
+
+.full {
+  width: 100%;
+}
+
+.loading,
+.disabled {
+  border-color: var(--border-transparent);
+  background-color: var(--surface-sunken);
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+.loading {
+  cursor: wait;
+}
