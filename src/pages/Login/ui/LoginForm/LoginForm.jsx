@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router';
 import styles from './LoginForm.module.scss';
 
 import { Input, InputPassword } from '@/shared/ui/Input';
@@ -13,9 +14,9 @@ function LoginForm() {
       <h3>Welcome back</h3>
       <p className="p">
         New here?{' '}
-        <a href="https://google.com" className="link">
+        <Link to="/register" className="link">
           Create an account
-        </a>
+        </Link>
       </p>
       <Input
         label="Email"

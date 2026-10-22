@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 import clsx from 'clsx';
 import styles from './ProductCard.module.scss';
 import { DEFAULT_PRODUCT_CARD_ADD_LABEL, DEFAULT_PRODUCT_IS_LOADING } from './config.js';
@@ -7,6 +9,7 @@ import ProductPrice from '../ProductPrice/ProductPrice.jsx';
 
 import { Rating } from '@/shared/ui/Rating';
 import { Button } from '@/shared/ui/Button';
+import { AppRoutes, routePaths } from '@/shared/config';
 
 function ProductCard(props) {
   const {
@@ -17,7 +20,7 @@ function ProductCard(props) {
     loading = DEFAULT_PRODUCT_IS_LOADING,
   } = props;
 
-  const { id, title, category, image, price, oldPrice, stock, rating, reviewsCount } = product;
+  const { title, category, image, price, oldPrice, stock, rating, reviewsCount } = product;
 
   const handleAdd = () => onAddToCart?.(product);
   const handleLinkClick = (e) => {
@@ -39,15 +42,15 @@ function ProductCard(props) {
         <div className={styles.up}>
           <p>{category}</p>
           <h3>
-            <a
-              href={`/products/${id}`}
+            <Link
+              to={`${routePaths[AppRoutes.PRODUCT]}`}
               className={styles.link}
               onClick={handleLinkClick}
               aria-disabled={loading || undefined}
               tabIndex={loading ? -1 : undefined}
             >
               {title}
-            </a>
+            </Link>
           </h3>
           <Rating value={rating} count={reviewsCount} readOnly />
         </div>

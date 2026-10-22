@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import styles from './Button.module.scss';
 import {
   DEFAULT_BUTTON_IS_DISABLED,
@@ -60,8 +61,8 @@ function Button(props) {
     };
 
     return (
-      <a
-        href={to}
+      <Link
+        to={to}
         className={classes}
         onClick={handleClick}
         aria-disabled={isInactive || undefined}
@@ -70,7 +71,7 @@ function Button(props) {
         {...rest}
       >
         {content}
-      </a>
+      </Link>
     );
   }
 
