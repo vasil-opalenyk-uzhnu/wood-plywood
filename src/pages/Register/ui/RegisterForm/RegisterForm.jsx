@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router';
 import styles from './RegisterForm.module.scss';
 
 import { Input, InputPassword } from '@/shared/ui/Input';
@@ -15,9 +16,9 @@ function RegisterForm() {
       <h3>Create an account</h3>
       <p className="p">
         Already have an account?{' '}
-        <a href="https://google.com" className="link">
+        <Link to="/login" className="link">
           Log in
-        </a>
+        </Link>
       </p>
       <Input
         label="First mame"

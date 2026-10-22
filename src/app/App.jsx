@@ -1,12 +1,7 @@
-import { HomePage } from '@/pages/Home';
-import { Footer } from '@/widgets/Footer';
+import AppRouter from '@/app/providers/router/AppRouter';
+
 function App() {
-  return (
-    <div className="wrapper">
-      <HomePage />
-      <Footer />
-    </div>
-  );
+  return <AppRouter />;
 }
 
 export default App;
