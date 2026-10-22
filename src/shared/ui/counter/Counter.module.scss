@@ -1,0 +1,55 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-transparent);
+  border-radius: var(--border-radius-l);
+
+  &.small {
+    min-width: 6.25rem;
+    height: 2.125rem;
+  }
+
+  &.medium {
+    min-width: 8.125rem;
+    height: 2.875rem;
+  }
+}
+
+.button {
+  width: 33.333%;
+  height: 100%;
+  color: var(--text-primary);
+
+  @include hover {
+    color: var(--accent-default);
+  }
+
+  @include focus {
+    outline: 2px solid var(--accent-default);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  @include flex-center;
+}
+
+.input {
+  width: 33.333%;
+  height: 100%;
+  font-size: 1.125rem;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.disabled {
+  opacity: 0.6;
+}

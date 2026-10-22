@@ -1,0 +1,52 @@
+.root {
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button {
+  min-width: 2.25rem;
+  height: 2.25rem;
+  color: var(--text-muted);
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-transparent);
+  border-radius: var(--border-radius-l);
+  transition:
+    background-color 0.15s,
+    border-color 0.15s;
+
+  @include flex-center;
+
+  @include hover {
+    border-color: var(--primary-default);
+  }
+
+  @include focus {
+    outline: 1px solid var(--accent-default);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.is-active {
+  background-color: var(--primary-default);
+  color: var(--text-primary);
+  cursor: default;
+}
+
+.dots {
+  min-width: 2rem;
+  color: var(--text-muted);
+  text-align: center;
+  user-select: none;
+}

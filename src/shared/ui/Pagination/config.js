@@ -1,0 +1,2 @@
+export const DEFAULT_PAGINATION_SIBLING_COUNT = 1;
+export const DEFAULT_PAGINATION_IS_DISABLED = false;

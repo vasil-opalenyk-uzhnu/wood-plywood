@@ -1,0 +1,1 @@
+export const DEFAULT_TABS_DEFAULT_INDEX = 0;

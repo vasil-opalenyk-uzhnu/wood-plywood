@@ -1,0 +1,33 @@
+.root {
+  padding-block: fluid(64, 40);
+  background-color: var(--surface-elevated);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.up {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 17.5rem;
+  gap: 1rem;
+}
+
+.down {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

@@ -1,0 +1,18 @@
+.root {
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--border-transparent);
+  }
+
+  &:nth-child(even) {
+    background-color: var(--surface-page);
+  }
+}

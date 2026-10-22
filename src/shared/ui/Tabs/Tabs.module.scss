@@ -1,0 +1,34 @@
+.list {
+  display: inline-flex;
+  padding: 0.25rem;
+  gap: 0.25rem;
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-transparent);
+  border-radius: var(--border-radius-l);
+}
+
+.tab {
+  padding: 0.5rem 0.875rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all var(--transition-duration) var(--transition-function);
+  color: var(--text-muted);
+  border-radius: var(--border-radius-s);
+
+  @include hover {
+    background-color: color-mix(in srgb, var(--primary-default), transparent 80%);
+  }
+
+  &[aria-selected='true'] {
+    color: var(--text-primary);
+    background-color: var(--primary-default);
+  }
+
+  @include focus {
+    background-color: color-mix(in srgb, var(--primary-default), transparent 80%);
+  }
+}
+
+.panel {
+  padding-top: 1.25rem;
+}

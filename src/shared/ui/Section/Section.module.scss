@@ -1,0 +1,58 @@
+.root {
+  padding-block: fluid(128, 64);
+
+  &.secondary {
+    background: var(--surface-elevated);
+  }
+}
+
+.header {
+  display: flex;
+  row-gap: 1.125rem;
+
+  &.left {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  &.center {
+    align-items: center;
+    text-align: center;
+  }
+
+  &.right {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  &.base {
+    flex-direction: column;
+  }
+
+  &.reverse {
+    flex-direction: column-reverse;
+  }
+
+  h2 {
+    max-width: 36.625rem;
+  }
+}
+
+.decoration {
+  display: flex;
+  align-items: center;
+  column-gap: 0.625rem;
+  width: 100%;
+}
+
+.icon {
+  min-width: 24px;
+  min-height: 24px;
+  color: var(--primary-default);
+}
+
+.body {
+  &:not(:first-child) {
+    margin-top: 2.5rem;
+  }
+}

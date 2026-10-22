@@ -1,0 +1,66 @@
+.rating {
+  --size: 1.25rem;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &.sm {
+    --size: 0.875rem;
+  }
+  &.md {
+    --size: 1.25rem;
+  }
+  &.lg {
+    --size: 1.5rem;
+  }
+}
+
+.stars {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+
+  li:has(input:focus-visible) {
+    outline: 2px solid var(--accent-default);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+.star {
+  --fill: 0%;
+
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  background: linear-gradient(to right, var(--primary-default) var(--fill), #a8a196 var(--fill));
+  clip-path: polygon(
+    79.39% 90.45%,
+    50% 80%,
+    20.61% 90.45%,
+    21.47% 59.27%,
+    2.45% 34.55%,
+    32.37% 25.73%,
+    50% 0%,
+    67.63% 25.73%,
+    97.55% 34.55%,
+    78.53% 59.27%
+  );
+
+  &.active {
+    --fill: 100%;
+  }
+}
+
+li.star {
+  background: linear-gradient(
+    to right,
+    var(--primary-default) var(--fill),
+    transparent var(--fill)
+  );
+}
+
+label.star {
+  cursor: pointer;
+}

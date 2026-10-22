@@ -1,0 +1,22 @@
+:root {
+  /* viewport-size */
+  --min-vw: 320px;
+  --max-vw: 1400px;
+
+  /* Border radius */
+  --border-radius-s: 6px;
+  --border-radius: 10px;
+  --border-radius-l: 14px;
+  --border-radius-xl: 18px;
+  --border-radius-xxl: 22px;
+
+  /* Transitions */
+  --transition-duration: 0.4s;
+  --transition-duration-slow: 0.8s;
+  --transition-function: ease;
+
+  /* Fonts */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-second: 'Great vibes', sans-serif;
+  --font-family-third: 'Playfair display', sans-serif;
+}

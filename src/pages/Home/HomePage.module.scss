@@ -1,0 +1,45 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  min-height: 100vh;
+  gap: 1.5rem;
+  padding-block: 8rem;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.text {
+  max-width: 37.5rem;
+}
+
+.scroll {
+  position: absolute;
+  inset: auto auto 1.5rem 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::after {
+    content: '';
+    width: 0.0625rem;
+    height: 2.5rem;
+    background: linear-gradient(to bottom, var(--text-disabled), transparent);
+  }
+}
