@@ -20,7 +20,7 @@ function HomePage() {
         <p className={clsx(styles.text, 'p p--text')}>
           Small-batch wooden objects shaped in Ukraine for meaningful everyday rituals.
         </p>
-        <Button to="https://google.com">Shop now</Button>
+        <Button to="/shop">Shop now</Button>
         <div className={styles.scroll}>
           <p className="p">SCROLL</p>
         </div>
