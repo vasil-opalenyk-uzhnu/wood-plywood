@@ -1,0 +1,37 @@
+.root {
+  position: fixed;
+  inset: 1.25rem auto auto 50%;
+  translate: -50% 0;
+  width: calc(100% - 0.9375rem * 2);
+  z-index: 900;
+  padding-block: 0.25rem;
+  border-radius: var(--border-radius-l);
+  transition: all var(--transition-duration) var(--transition-function);
+
+  &[data-scrolled='true'] {
+    max-width: 700px;
+    background-color: var(--primary-default);
+  }
+
+  @include mobile {
+    width: auto;
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.logo {
+  @include mobile {
+    display: none;
+  }
+}

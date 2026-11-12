@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: fluid(360, 320) 1fr;
+  gap: fluid(32, 16);
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(32, 16);
+}

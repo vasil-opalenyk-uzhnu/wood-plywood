@@ -1,6 +1,9 @@
-import AppRouter from '@/app/providers/router/AppRouter';
+import { useInitializeApp } from './init/useInitializeApp.js';
+import { AppRouter } from './providers/router/AppRouter';
 
 function App() {
+  useInitializeApp();
+
   return <AppRouter />;
 }
 

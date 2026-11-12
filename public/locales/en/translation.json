@@ -1,0 +1,92 @@
+{
+  "navigation": {
+    "home": "Home",
+    "shop": "Shop",
+    "about": "About us",
+    "own": "Custom order",
+    "profile": "My profile",
+    "navigationLabel": "Navigation"
+  },
+  "home": {
+    "hero": {
+      "description": "Handcrafted with soul",
+      "image": "Handcrafted wooden products",
+      "paragraph": "Small-batch wooden pieces made in Ukraine for meaningful everyday rituals",
+      "button": "Shop now",
+      "scroll": "SCROLL"
+    },
+    "products": {
+      "description": "HANDMADE. HONEST MATERIALS. BUILT TO LAST",
+      "title": "Popular products",
+      "button": "View all products"
+    },
+    "about": {
+      "description": "ABOUT US",
+      "title": "One craftsperson, one workshop, one piece at a time",
+      "paragraphs": {
+        "one": "Our story began with a deep respect for craftsmanship and woodworking traditions passed down through generations. In 2012, we opened our workshop in Kyiv, where every piece is carefully made by hand, sanded and finished with natural oil.",
+        "two": "We work with oak, walnut, ash, pine, cedar, cherry and maple sourced from responsibly managed Ukrainian forests. No mass production and no shortcuts — just wood, tools and time."
+      },
+      "stats": {
+        "year": "Years of experience",
+        "sold": "Handmade pieces sold",
+        "used": "Wood species used"
+      },
+      "badge": "HANDMADE"
+    },
+    "order": {
+      "description": "GET IN TOUCH",
+      "title": "Order something one of a kind",
+      "form": {
+        "title": "Tell us about your idea",
+        "name": {
+          "placeholder": "Taras",
+          "label": "First name"
+        },
+        "surname": {
+          "placeholder": "Shevchenko",
+          "label": "Last name"
+        },
+        "email": {
+          "placeholder": "taras.shevchenko@example.com",
+          "label": "Email address"
+        },
+        "description": {
+          "placeholder": "I would like...",
+          "label": "Describe your idea",
+          "hint": "Share any details you have, such as dimensions, type of wood, engraving or your desired deadline."
+        },
+        "button": {
+          "text": "Send request",
+          "loading": "Sending..."
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "Handcrafted wooden pieces made with care in a small workshop in Ukraine. Every piece is unique.",
+    "copyright": "© 2026 Wood&Plywood. All rights reserved.",
+    "made": "Made with ♥ in Ukraine"
+  },
+  "shop": {
+    "description": "OUR STORE",
+    "title": "Handcrafted wooden goods",
+    "showing": "Showing {{show}} of {{all}} products",
+    "filters": {
+      "title": "Filters",
+      "searchLabel": "Search products",
+      "searchPlaceholder": "Search products...",
+      "category": "Category",
+      "price": "Price"
+    },
+    "sort": {
+      "label": "Sort",
+      "popularFirst": "Popular first",
+      "popularLast": "Popular last"
+    },
+    "show": {
+      "label": "Show per page"
+    }
+  },
+  "product": {}
+}

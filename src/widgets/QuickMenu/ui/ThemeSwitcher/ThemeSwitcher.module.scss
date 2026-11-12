@@ -1,0 +1,22 @@
+.root {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: var(--text-inverse);
+  background-color: var(--primary-default);
+
+  @include flex-center;
+
+  @include hover {
+    background-color: var(--primary-hover);
+  }
+
+  @include active {
+    background-color: var(--primary-active);
+  }
+
+  @include focus {
+    outline: 2px solid var(--accent-default);
+    outline-offset: 2px;
+  }
+}

@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--border-radius-s);
+  background-color: var(--feedback-error-bg);
+  border: 1px solid var(--feedback-error-fg);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--feedback-error-fg);
+}
+
+.description {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--feedback-error-fg);
+}

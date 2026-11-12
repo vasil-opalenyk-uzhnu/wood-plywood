@@ -1,0 +1,123 @@
+.root {
+  width: 100%;
+  pointer-events: auto;
+
+  &.closing {
+    pointer-events: none;
+    animation: toast-exit 0.4s ease forwards;
+
+    & ~ .root {
+      animation: toast-shift 0.2s ease 0.2s forwards;
+    }
+  }
+}
+
+.toast {
+  --toast-fg: var(--primary-default);
+  --toast-bg: var(--surface-sunken);
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.75rem 0.75rem 0.875rem;
+  color: var(--text-primary);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--border-radius-s);
+  box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, var(--charcoal-950), transparent 88%);
+  animation: toast-enter 0.25s ease;
+
+  &.success {
+    --toast-fg: var(--feedback-success-fg);
+    --toast-bg: var(--feedback-success-bg);
+  }
+
+  &.error {
+    --toast-fg: var(--feedback-error-fg);
+    --toast-bg: var(--feedback-error-bg);
+  }
+
+  &.warning {
+    --toast-fg: var(--feedback-warning-fg);
+    --toast-bg: var(--feedback-warning-bg);
+  }
+
+  &.info {
+    --toast-fg: var(--feedback-info-fg);
+    --toast-bg: var(--feedback-info-bg);
+  }
+
+  &.closing {
+    pointer-events: none;
+    animation: toast-exit 0.4s ease forwards;
+
+    & ~ .root {
+      animation: toast-shift 0.2s ease 0.2s forwards;
+    }
+  }
+}
+
+.icon {
+  color: var(--toast-fg);
+}
+
+.close {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-left: auto;
+  border-radius: var(--border-radius-s);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+
+  @include flex-center;
+
+  @include hover {
+    color: var(--text-primary);
+    background: var(--surface-sunken);
+  }
+
+  @include focus {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 1px;
+  }
+}
+
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes toast-exit {
+  to {
+    opacity: 0;
+    translate: 0 -75%;
+  }
+}
+
+@keyframes toast-shift {
+  to {
+    translate: 0 calc((100% + 0.75rem) * -1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root {
+    animation: none;
+
+    &.closing,
+    &.closing ~ .toast {
+      animation-duration: 0.01ms;
+      animation-delay: 0s;
+    }
+  }
+}
