@@ -1,9 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 import styles from './PopularProduct.module.scss';
 
 import { ProductCard } from '@/entities/product/ui';
 
 import { Section } from '@/shared/ui/Section';
 import { Button } from '@/shared/ui/Button';
+import { useLocalizedRoutePath } from '@/shared/lib/routing';
+import { AppRoutes, routePaths } from '@/shared/config/index.js';
 
 const unsplash = (photoId) =>
   `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=936&h=976&q=80`;
@@ -61,6 +65,8 @@ const PRODUCTS = [
 ];
 
 function PopularProducts() {
+  const { t } = useTranslation('translation');
+  const getLocalizedPath = useLocalizedRoutePath();
   const handleAddToCart = (product) => {
     console.log('Added to cart ' + product.id);
   };
@@ -69,8 +75,8 @@ function PopularProducts() {
     <Section
       isDecorationVisible={false}
       bodyClassName={styles.body}
-      description="HANDMADE. HONEST MATERIALS. BUILT TO LAST."
-      title="Popular Products"
+      description={t('home.products.description')}
+      title={t('home.products.title')}
       side="left"
     >
       <ul className={styles.list}>
@@ -80,7 +86,9 @@ function PopularProducts() {
           </li>
         ))}
       </ul>
-      <Button variant="secondary">View all products</Button>
+      <Button to={getLocalizedPath(routePaths[AppRoutes.SHOP])} variant="secondary">
+        {t('home.products.button')}
+      </Button>
     </Section>
   );
 }

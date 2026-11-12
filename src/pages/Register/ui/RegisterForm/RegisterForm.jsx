@@ -1,18 +1,17 @@
-import { useState } from 'react';
 import { Link } from 'react-router';
 import styles from './RegisterForm.module.scss';
 
+import { useRegisterForm } from './useRegisterForm/useRegisterForm.js';
+
 import { Input, InputPassword } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';
+import { AppRoutes, routePaths } from '@/shared/config';
 
 function RegisterForm() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { errors, isPending, register, handleSubmit } = useRegisterForm();
 
   return (
-    <form className={styles.root}>
+    <form className={styles.root} onSubmit={handleSubmit}>
       <h3>Create an account</h3>
       <p className="p">
         Already have an account?{' '}
@@ -24,32 +23,32 @@ function RegisterForm() {
         label="First mame"
         required
         placeholder="Taras"
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
+        {...register('firstName')}
+        error={errors.firstName?.message}
       />
       <Input
         label="Last mame"
         required
         placeholder="Shevchenko"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
+        {...register('lastName')}
+        error={errors.lastName?.message}
       />
       <Input
         label="Email"
         required
-        placeholder="your@gmail.com"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        placeholder="tarashevchenko@gmail.com"
+        {...register('email')}
+        error={errors.email?.message}
       />
       <InputPassword
         label="Password"
         required
         placeholder="••••••••"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        {...register('password')}
+        error={errors.password?.message}
       />
-      <a href="https://google.com">Forgot password?</a>
-      <Button size="small" type="submit" fullWidth>
+      <Link to={routePaths[AppRoutes.FORGOT_PASSWORD]}>Forgot password?</Link>
+      <Button size="small" type="submit" fullWidth loading={isPending}>
         Create account
       </Button>
     </form>

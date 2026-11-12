@@ -3,8 +3,8 @@ import styles from './ReviewCard.module.scss';
 import { DEFAULT_REVIEW_LOCALE } from './config.js';
 
 import { Rating } from '@/shared/ui/Rating';
+import { Avatar } from '@/shared/ui/Avatar';
 
-import { getInitials } from './getInitials.js';
 import { formatDate } from './formatDate.js';
 
 function ReviewCard(props) {
@@ -16,13 +16,7 @@ function ReviewCard(props) {
     <article className={clsx('block', className, styles.root)}>
       <header className={styles.header}>
         <div className={styles.person}>
-          <div className={styles.avatar} aria-hidden="true">
-            {avatar ? (
-              <img className={styles.photo} src={avatar} alt="" loading="lazy" />
-            ) : (
-              getInitials(author)
-            )}
-          </div>
+          <Avatar src={avatar} name={author} size="small" />
           <div className={styles.meta}>
             <p className={styles.name}>{author}</p>
             <time className="p" dateTime={createdAt}>

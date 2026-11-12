@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { HashLink } from 'react-router-hash-link';
 import styles from './Navigation.module.scss';
 import clsx from 'clsx';
 import { DEFAULT_NAVIGATION_MODIFIER, DEFAULT_NAVIGATION_ORDER } from './config.js';
@@ -22,9 +22,13 @@ function Navigation(props) {
         <ul className={clsx(styles.list, styles[order], classNameList)}>
           {links.map((link) => (
             <li key={link.href}>
-              <Link to={link.href} className={clsx(styles.link, styles[variant], classNameLink)}>
+              <HashLink
+                smooth
+                to={link.href}
+                className={clsx(styles.link, styles[variant], classNameLink)}
+              >
                 {link.label}
-              </Link>
+              </HashLink>
             </li>
           ))}
         </ul>

@@ -1,0 +1,26 @@
+.logo {
+  font-family: var(--font-family-second), sans-serif;
+  font-weight: 400;
+  transition: all var(--transition-duration) var(--transition-function);
+
+  @include fluid-text(30, 16);
+
+  @include hover {
+    color: var(--feedback-success-bg);
+  }
+
+  @include focus {
+    outline: 2px solid var(--accent-default);
+    outline-offset: 2px;
+  }
+}
+
+.variant {
+  &-base {
+    color: var(--white);
+  }
+
+  &-secondary {
+    color: var(--secondary-default);
+  }
+}

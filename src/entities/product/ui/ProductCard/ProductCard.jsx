@@ -10,6 +10,7 @@ import ProductPrice from '../ProductPrice/ProductPrice.jsx';
 import { Rating } from '@/shared/ui/Rating';
 import { Button } from '@/shared/ui/Button';
 import { AppRoutes, routePaths } from '@/shared/config';
+import { useLocalizedRoutePath } from '@/shared/lib/routing';
 
 function ProductCard(props) {
   const {
@@ -19,6 +20,8 @@ function ProductCard(props) {
     addLabel = DEFAULT_PRODUCT_CARD_ADD_LABEL,
     loading = DEFAULT_PRODUCT_IS_LOADING,
   } = props;
+
+  const getLocalizedRoutePath = useLocalizedRoutePath();
 
   const { title, category, image, price, oldPrice, stock, rating, reviewsCount } = product;
 
@@ -43,7 +46,7 @@ function ProductCard(props) {
           <p>{category}</p>
           <h3>
             <Link
-              to={`${routePaths[AppRoutes.PRODUCT]}`}
+              to={getLocalizedRoutePath(routePaths[AppRoutes.PRODUCT])}
               className={styles.link}
               onClick={handleLinkClick}
               aria-disabled={loading || undefined}

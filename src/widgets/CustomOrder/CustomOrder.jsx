@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import clsx from 'clsx';
 import styles from './CustomOrder.module.scss';
 import customOrderImage from '/images/custom-order.jpg';
@@ -9,6 +11,7 @@ import { Textarea } from '@/shared/ui/Textarea';
 import { Button } from '@/shared/ui/Button';
 
 function CustomOrder() {
+  const { t } = useTranslation('translation');
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -16,30 +19,44 @@ function CustomOrder() {
   };
 
   return (
-    <Section order="reverse" title="Order something one of a kind" description="Find us">
+    <Section
+      id="own"
+      order="reverse"
+      title={t('home.order.title')}
+      description={t('home.order.description')}
+    >
       <div className={styles.container}>
         <div className={styles.image}>
           <img src={customOrderImage} alt="" width={536} height={560} loading="lazy" />
         </div>
         <form onSubmit={handleSubmit} className={clsx(styles.form, 'block')}>
-          <h3>Tell us about your piece</h3>
-          <Input placeholder="Taras" label="Your first name" required autoComplete="name" />
-          <Input placeholder="Shevchenko" label="Your last name" required autoComplete="name" />
+          <h3>{t('home.order.form.title')}</h3>
           <Input
-            placeholder="your@gmail.com"
-            label="Email or Telegram"
+            placeholder={t('home.order.form.name.placeholder')}
+            label={t('home.order.form.name.label')}
+            required
+            autoComplete="name"
+          />
+          <Input
+            placeholder={t('home.order.form.surname.placeholder')}
+            label={t('home.order.form.surname.label')}
+            required
+            autoComplete="name"
+          />
+          <Input
+            placeholder={t('home.order.form.email.placeholder')}
+            label={t('home.order.form.email.label')}
             required
             autoComplete="email"
           />
           <Textarea
-            placeholder="I want..."
-            label="Describe your idea"
+            placeholder={t('home.order.form.description.placeholder')}
+            label={t('home.order.form.description.label')}
             required
-            hint="Size, wood, engraving, deadline: whatever you can share"
+            hint={t('home.order.form.description.hint')}
           />
-
-          <Button type="submit" loadingText="Sending...">
-            Send request
+          <Button type="submit" loadingText={t('home.order.form.button.loading')}>
+            {t('home.order.form.button.text')}
           </Button>
         </form>
       </div>
